@@ -6,8 +6,7 @@ WORKDIR /frontend
 
 COPY . /frontend
 
-RUN yarn add @vue/cli @vue/cli-init --global && yarn add jquery
-
+RUN yarn add @vue/cli @vue/cli-init --global
 RUN yarn install
 
 CMD yarn run dev
