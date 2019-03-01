@@ -1,8 +1,7 @@
 <template>
   <b-navbar
     toggleable="lg"
-    type="dark"
-    variant="info">
+    type="light">
     <b-container fluid>
       <b-navbar-brand
 
@@ -21,5 +20,7 @@ export default {
 </script>
 
 <style>
-
+  .navbar {
+    border-bottom: solid 1px #d5d5d5;
+  }
 </style>
