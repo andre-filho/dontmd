@@ -75,17 +75,19 @@ export default {
         }
       }
 
-      // axios
-      //   .post(process.env.HOST_ADDRESS + 'pages/')
-      //   .then((res) => {
-      //     if (res.status === 200) {
-      //       // final statement should be a redirect to the created page
+      const page = {name: this.pagename, content: ''}
 
-      //     }
-      //   })
-      //   .catch((err) => {
-
-      //   })
+      axios
+        .post('http://localhost:3000/pages', page)
+        .then((res) => {
+          if (res.status === 200) {
+            alert('created')
+          }
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+      this.$router.push({name: 'ShowPage', params: {name: this.pagename}})
     }
   }
 }
