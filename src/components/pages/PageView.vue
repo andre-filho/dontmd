@@ -60,7 +60,6 @@ export default {
       const updated = {name: this.name, content: this.content}
       if (event.key === 'Enter') {
         axios
-          // .patch(`http://0.0.0.0:3000/pages/edit/${this.name}`, {
           .patch(`http://localhost/api/pages/edit/${this.name}`, updated)
           .then((res) => {
             console.log("Page saved successfully!")

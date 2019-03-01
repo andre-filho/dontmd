@@ -9,23 +9,28 @@
       </h2>
       <b-row>
         <b-col md='8' offset-md="2" class="my-5">
-          <b-input-group prepend="dontmd.com/">
-            <b-form-input
-              v-model="pagename"
-              placeholder="Type the name of the page you want to create"/>
-            <b-input-group-append>
-              <b-button
-                @click="createPage"
-                variant="secondary">
-                Create
-              </b-button>
-            </b-input-group-append>
-          </b-input-group>
+          <div @keydown.enter="createPage">
+            <b-input-group prepend="dontmd.com/">
+              <b-form-input
+                v-model="pagename"
+                placeholder="Type the name of the page you want to create"/>
+              <b-input-group-append>
+                <b-button
+                  @click="createPage"
+                  variant="secondary">
+                  Create
+                </b-button>
+              </b-input-group-append>
+            </b-input-group>
+          </div>
         </b-col>
       </b-row>
     </b-container>
     <h5 class="small text-muted text-center">
       Powered by Vue.js, Express and tons of coffee
+    </h5>
+    <h5 class="small text-muted text-center">
+      <a href="github.com/andre-filho/dontmd" class="text-muted">View on GitHub</a>
     </h5>
   </section>
 </template>

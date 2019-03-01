@@ -10,13 +10,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faCoffee,
-  faDownload
+  faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCoffee)
-library.add(faDownload)
+library.add(faQuestionCircle)
 
 Vue.use(BootstrapVue)
 
