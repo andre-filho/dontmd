@@ -10,6 +10,7 @@
             placeholder="Enter markdown"
             v-model="content"
             rows="23"
+            @keypress="save"
             />
         </b-col>
         <b-col md='6'>
@@ -22,8 +23,10 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
 import marked from 'marked'
+import axios from 'axios'
+
+import Navbar from '@/components/Navbar'
 
 export default {
   components: {
@@ -32,6 +35,7 @@ export default {
 
   data () {
     return {
+      name: '',
       content: '',
       placeholder: '### Your md will be rendered here'
     }
@@ -46,8 +50,30 @@ export default {
     }
   },
 
-  methods: {
+  beforeMount () {
+    this.name = this.$route.params.name
+    this.getPage()
+  },
 
+  methods: {
+    save (event) {
+      const updated = {name: this.name, content: this.content}
+      if (event.key === 'Enter') {
+        axios
+          // .patch(`http://0.0.0.0:3000/pages/edit/${this.name}`, {
+          .patch(`http://localhost/api/pages/edit/${this.name}`, updated)
+          .then((res) => {
+            console.log("Page saved successfully!")
+          })
+          .catch((err) => (console.log(err)))
+      }
+    },
+    getPage () {
+      axios
+        .get(`http://localhost/api/pages/${this.name}`)
+        .then((res) => (this.content = res.data.content))
+        .catch((err) => console.log(err))
+    }
   }
 
 }

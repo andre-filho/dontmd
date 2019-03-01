@@ -15,7 +15,7 @@
               placeholder="Type the name of the page you want to create"/>
             <b-input-group-append>
               <b-button
-                @click="createPage()"
+                @click="createPage"
                 variant="secondary">
                 Create
               </b-button>
@@ -78,10 +78,10 @@ export default {
       const page = {name: this.pagename, content: ''}
 
       axios
-        .post('http://localhost:3000/pages', page)
+        .post('http://localhost/api/pages', page)
         .then((res) => {
-          if (res.status === 200) {
-            alert('created')
+          if (res.status === 201) {
+            console.log('created')
           }
         })
         .catch((err) => {
