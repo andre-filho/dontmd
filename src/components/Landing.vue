@@ -30,13 +30,14 @@
       Powered by Vue.js, Express and tons of coffee
     </h5>
     <h5 class="small text-muted text-center">
-      <a href="github.com/andre-filho/dontmd" class="text-muted">View on GitHub</a>
+      <a href="https://github.com/andre-filho/dontmd" class="text-muted">View on GitHub</a>
     </h5>
   </section>
 </template>
 
 <script>
 import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -49,7 +50,8 @@ export default {
         'Fast documentation for your git repo\'s wiki coming right up!',
         '"You are special, you can make it in time!" - Mom',
         'Markdown on the way',
-        'Easy and simple... I was talking about md'
+        'Easy and simple... I was talking about md',
+        'It is rare but happens a lot. - Chiqui'
       ],
 
       attemptsOnBlankPage: 0

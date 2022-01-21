@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 services:
   dontmd-front:
     container_name: dontmd-frontend
@@ -8,9 +8,9 @@ services:
     volumes:
       - .:/frontend
       - ./node_modules:/frontend/node_modules
-    # networks:
-    #   - dontmd_net_1
+    networks:
+      - dontmd_net_1
 
-# networks:
-#   dontmd_net_1:
-#     external: true
+networks:
+  dontmd_net_1:
+    name: dontmd_net_1
