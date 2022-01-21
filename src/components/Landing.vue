@@ -64,9 +64,9 @@ export default {
 
   methods: {
     randomizeGreeting () {
-      return this.listOfGreetings[
-        Math.floor(Math.random() * this.listOfGreetings.length)
-      ]
+      let index = Math.floor(Math.random() * this.listOfGreetings.length)
+
+      return this.listOfGreetings[index]
     },
 
     createPage () {

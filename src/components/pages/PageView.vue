@@ -62,7 +62,7 @@ export default {
         axios
           .patch(`http://localhost/api/pages/edit/${this.name}`, updated)
           .then((res) => {
-            console.log("Page saved successfully!")
+            console.log('Page saved successfully!')
           })
           .catch((err) => (console.log(err)))
       }
